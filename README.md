@@ -31,9 +31,8 @@ Patients with Alzheimer’s often suffer from memory loss, disorientation, and w
 - Buzzer
 - Custom Locking Mechanism
   <figure>
-  <img src="(https://github.com/charan-608/SAFE-ZONE/blob/main/DOCUMENTATION/CIRCUIT_DIAGRAM.png
-)" alt="Demo Screenshot" width="450"/>
-  <figcaption><strong>Figure 1:</strong>Circuit Diagram</figcaption>
+  <img src="https://github.com/charan-608/SAFE-ZONE/blob/main/DOCUMENTATION/CIRCUIT_DIAGRAM.png?raw=true" alt="Circuit Diagram" width="450"/>
+  <figcaption><strong>Figure 1:</strong> Circuit Diagram</figcaption>
 </figure>
 
 
@@ -56,9 +55,10 @@ Patients with Alzheimer’s often suffer from memory loss, disorientation, and w
 
 > Check out the documentation folder for in depth details
 <figure>
-  <img src="(https://github.com/charan-608/SAFE-ZONE/blob/main/DOCUMENTATION/Working%20images.jpg)" alt="Demo Screenshot" width="450"/>
+  <img src="https://github.com/charan-608/SAFE-ZONE/blob/main/DOCUMENTATION/Working%20images.jpg?raw=true" alt="Demo Screenshot" width="450"/>
   <figcaption><strong>Figure 1:</strong> SafeZone Project Working Image</figcaption>
 </figure>
+
 
 
 ---
@@ -69,8 +69,9 @@ Patients with Alzheimer’s often suffer from memory loss, disorientation, and w
 2. **Transmission**: Sent via GSM to Firebase/cloud.
 3. **Storage & API**: Data processed and served to the frontend.
 4. **Frontend Display**: Location visualized on a live map.
-   <figure>
-  <img src="(https://github.com/charan-608/SAFE-ZONE/blob/main/DOCUMENTATION/FLOW_DIAGRAM.png)" alt="Demo Screenshot" width="450"/>
-  <figcaption><strong>Figure 1:</strong>Flow Chart</figcaption>
+ <figure>
+  <img src="https://github.com/charan-608/SAFE-ZONE/blob/main/DOCUMENTATION/FLOW_DIAGRAM.png?raw=true" alt="Flow Diagram" width="450"/>
+  <figcaption><strong>Figure 1:</strong> Flow Chart</figcaption>
 </figure>
+
 
