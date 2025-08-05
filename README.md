@@ -37,6 +37,9 @@ Patients with Alzheimer’s often suffer from memory loss, disorientation, and w
 </figure>
 
 
+
+
+
 ### 🌐 Software
 - Arduino IDE (Embedded C)
 - Firebase (for real-time location storage)
