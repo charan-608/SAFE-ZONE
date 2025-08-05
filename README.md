@@ -33,7 +33,7 @@ Patients with Alzheimer’s often suffer from memory loss, disorientation, and w
 
    <figure>
   <img src="https://github.com/charan-608/SAFE-ZONE/blob/main/DOCUMENTATION/CIRCUIT_DIAGRAM.png?raw=true" alt="Circuit Diagram" width="450"/>
-  <figcaption><strong></strong> Circuit Diagram</figcaption>
+  <figcaption><strong></strong> </figcaption>
 </figure>
 
 
