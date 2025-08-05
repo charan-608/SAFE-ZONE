@@ -30,6 +30,12 @@ Patients with Alzheimer’s often suffer from memory loss, disorientation, and w
 - OLED Display
 - Buzzer
 - Custom Locking Mechanism
+  <figure>
+  <img src="(https://github.com/charan-608/SAFE-ZONE/blob/main/DOCUMENTATION/CIRCUIT_DIAGRAM.png
+)" alt="Demo Screenshot" width="450"/>
+  <figcaption><strong>Figure 1:</strong>Circuit Diagram</figcaption>
+</figure>
+
 
 ### 🌐 Software
 - Arduino IDE (Embedded C)
@@ -49,7 +55,10 @@ Patients with Alzheimer’s often suffer from memory loss, disorientation, and w
 - 📱 **Mobile Responsive Design**
 
 > Check out the documentation folder for in depth details
-![LIVE USAGE IMAGE](https://github.com/charan-608/SAFE-ZONE/blob/main/DOCUMENTATION/Working%20images.jpg)
+<figure>
+  <img src="(https://github.com/charan-608/SAFE-ZONE/blob/main/DOCUMENTATION/Working%20images.jpg)" alt="Demo Screenshot" width="450"/>
+  <figcaption><strong>Figure 1:</strong> SafeZone Project Working Image</figcaption>
+</figure>
 
 
 ---
@@ -60,4 +69,8 @@ Patients with Alzheimer’s often suffer from memory loss, disorientation, and w
 2. **Transmission**: Sent via GSM to Firebase/cloud.
 3. **Storage & API**: Data processed and served to the frontend.
 4. **Frontend Display**: Location visualized on a live map.
-![FLOW CHART](https://github.com/charan-608/SAFE-ZONE/blob/main/DOCUMENTATION/FLOW_DIAGRAM.png)
+   <figure>
+  <img src="(https://github.com/charan-608/SAFE-ZONE/blob/main/DOCUMENTATION/FLOW_DIAGRAM.png)" alt="Demo Screenshot" width="450"/>
+  <figcaption><strong>Figure 1:</strong>Flow Chart</figcaption>
+</figure>
+
