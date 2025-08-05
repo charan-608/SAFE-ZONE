@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Battery Status</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, rgba(255, 87, 34, 0.8), rgba(33, 150, 243, 0.8)), url('https://www.transparenttextures.com/patterns/diagonal-stripes.png');
+            background-size: cover;
+            color: #333;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);  /* Semi-transparent white */
+            padding: 30px 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            width: 300px;
+            backdrop-filter: blur(10px);  /* Blurring effect behind the container */
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        #battery-level {
+            font-size: 48px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .battery-icon {
+            font-size: 100px;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+
+        .battery-status {
+            font-size: 18px;
+            color: #888;
+        }
+
+        .battery-bar {
+            width: 100%;
+            height: 20px;
+            border-radius: 10px;
+            background-color: #f0f0f0;
+            margin: 20px 0;
+            box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .battery-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+
+        .button {
+            background-color: #4caf50;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Battery Status</h1>
+        <div class="battery-icon">
+            <i class="fas fa-battery-full"></i>
+        </div>
+        <div id="battery-level">Loading...</div>
+        <div class="battery-status" id="battery-status">Battery info will appear here.</div>
+        
+        <div class="battery-bar">
+            <div id="battery-fill" class="battery-fill" style="width: 0%;"></div>
+        </div>
+
+        <a href="Page_2.html" class="button">Back to Dashboard</a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script>
+        if ('getBattery' in navigator) {
+            navigator.getBattery().then(function(battery) {
+                const level = Math.round(battery.level * 100);
+                const batteryFill = document.getElementById('battery-fill');
+                const batteryLevel = document.getElementById('battery-level');
+                const batteryStatus = document.getElementById('battery-status');
+
+                batteryLevel.textContent = `${level}% charged`;
+                batteryStatus.textContent = (battery.charging) ? "Charging" : "Not Charging";
+                batteryFill.style.width = level + '%';
+
+                // Change battery color based on the level
+                if (battery.charging) {
+                    if (level >= 75) {
+                        batteryFill.style.backgroundColor = "#4caf50"; // Green for 75-100%
+                    } else if (level >= 40) {
+                        batteryFill.style.backgroundColor = "#ffeb3b"; // Yellow for 40-74%
+                    } else {
+                        batteryFill.style.backgroundColor = "#f44336"; // Red for 0-39%
+                    }
+                } else {
+                    if (level >= 75) {
+                        batteryFill.style.backgroundColor = "#2196F3"; // Blue for 75-100% when not charging
+                    } else if (level >= 40) {
+                        batteryFill.style.backgroundColor = "#ff9800"; // Orange for 40-74% when not charging
+                    } else {
+                        batteryFill.style.backgroundColor = "#f44336"; // Red for 0-39% when not charging
+                    }
+                }
+            });
+        } else {
+            document.getElementById('battery-level').textContent = "Battery API not supported";
+            document.getElementById('battery-status').textContent = "";
+        }
+    </script>
+
+</body>
+</html>

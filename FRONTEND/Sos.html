@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS - Nearby Help</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: white; /* Ensures no background images */
+        }
+
+        #header {
+            background-color: #f44336;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #map {
+            height: 90vh;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">Nearest Police Stations & Hospitals</div>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const lat = 28.4595;
+        const lng = 77.0266;
+
+        const map = L.map('map').setView([lat, lng], 15);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        L.marker([lat, lng]).addTo(map)
+            .bindPopup("You are here").openPopup();
+
+        const hospitalIcon = L.icon({
+            iconUrl: 'hospital.png',
+            iconSize: [28, 28],
+        });
+
+        const policeIcon = L.icon({
+            iconUrl: 'police.png',
+            iconSize: [28, 28],
+        });
+
+        async function searchNearby(keyword, icon) {
+            const url = `https://nominatim.openstreetmap.org/search?format=json&q=${keyword}&limit=10&bounded=1&viewbox=${lng-0.02},${lat+0.02},${lng+0.02},${lat-0.02}`;
+            const res = await fetch(url);
+            const data = await res.json();
+
+            data.forEach(place => {
+                L.marker([place.lat, place.lon], { icon: icon })
+                    .addTo(map)
+                    .bindPopup(`<strong>${place.display_name}</strong>`);
+            });
+        }
+
+        searchNearby('hospital', hospitalIcon);
+        searchNearby('police station', policeIcon);
+    </script>
+</body>
+</html>

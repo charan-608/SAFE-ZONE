@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemoryGuard - Alzheimer's Assistive Watch</title>
+    <link rel="stylesheet" href="About.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll("nav ul li a");
+            links.forEach(link => {
+                link.addEventListener("click", function(e) {
+                    const targetId = this.getAttribute("href").substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 50,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">MemoryGuard</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Protecting Alzheimer's Patients with Smart Safety Watches</h1>
+            <p>Ensuring patient safety while easing the burden on caregivers.</p>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
+        <div class="hero-image">
+            <img src="pic.png" alt="Smartwatch Image">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>Why MemoryGuard?</h2>
+        <div class="about-content">
+            <p>Alzheimer's patients are prone to wandering, memory loss, and confusion, causing safety risks. Caregivers constantly worry about their loved ones' well-being. Existing tracking devices lack essential features like <strong>geofencing</strong> and <strong>emergency alerts</strong>, making it difficult to ensure patient safety.</p>
+            <p>Our project focuses on developing <strong>affordable smartwatches</strong> with advanced safety features, reducing risks and providing caregivers with <strong>peace of mind</strong>.</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Key Features</h2>
+        <div class="feature-list">
+            <div class="feature-item">
+                <h3>📍 Location Tracking</h3>
+                <p>Real-time GPS tracking ensures you always know where your loved one is.</p>
+            </div>
+            <div class="feature-item">
+                <h3>🛑 Geo-Fencing</h3>
+                <p>Get alerts when the patient leaves a safe zone, preventing wandering.</p>
+            </div>
+            <div class="feature-item">
+                <h3>🚨 Emergency SOS</h3>
+                <p>One-touch SOS button instantly alerts caregivers during emergencies.</p>
+            </div>
+            <div class="feature-item">
+                <h3>🔒 Secure Lock</h3>
+                <p>Prevents patients from removing the device to enhance safety.</p>
+            </div>
+            <div class="feature-item">
+                <h3>🔋 Long Battery</h3>
+                <p>Lasts multiple days on a single charge for uninterrupted monitoring.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Want to learn more? Reach out to us!</p>
+        <div class="contact-info">
+            <p>📞 Phone: +91 #######837</p>
+            <p>📧 Email: user@gmail.com</p>
+        </div>
+    </section>
+
+</body>
+</html>

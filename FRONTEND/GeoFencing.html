@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>BML Munjal University - GeoFence View</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    body { 
+      margin: 0; 
+      font-family: Arial, sans-serif; 
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+    #controlPanel {
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin: 10px;
+      max-width: 400px;
+      align-self: center;
+      border-radius: 8px;
+    }
+    #geoFencingHeading {
+      font-size: 24px;
+      font-weight: bold;
+      color: #8e24aa;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    #radiusInput {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+    #confirmButton {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      background-color: #8e24aa;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #confirmButton:hover {
+      background-color: #6a1b9a;
+    }
+    #map { 
+      flex-grow: 1; 
+      width: 100%; 
+    }
+  </style>
+</head>
+<body>
+  <div id="controlPanel">
+    <div id="geoFencingHeading">Geo Fencing</div>
+    <input type="number" id="radiusInput" value="100" min="10" placeholder="Enter radius in meters">
+    <button id="confirmButton">Confirm Radius</button>
+  </div>
+  <div id="map"></div>
+  
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const bmlLatLng = [28.24759, 76.81421];
+    const map = L.map('map').setView(bmlLatLng, 17);
+
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles © Esri — Source: Esri, Maxar, Earthstar Geographics, and others'
+    }).addTo(map);
+
+    const marker = L.marker(bmlLatLng)
+      .addTo(map)
+      .bindPopup("BML Munjal University")
+      .openPopup();
+
+    let geoFenceCircle = L.circle(bmlLatLng, {
+      color: "#8e24aa",
+      fillColor: "#ce93d8",
+      fillOpacity: 0.3,
+      radius: 100
+    }).addTo(map);
+
+    // Get elements for input and button
+    const radiusInput = document.getElementById("radiusInput");
+    const confirmButton = document.getElementById("confirmButton");
+
+    // Update the geofence radius when the user confirms the input
+    confirmButton.addEventListener("click", function() {
+      const newRadius = parseInt(radiusInput.value);
+      if (!isNaN(newRadius)) {
+        geoFenceCircle.setRadius(newRadius);
+        alert(`Geofence radius updated to ${newRadius} meters!`);
+      } else {
+        alert("Please enter a valid radius!");
+      }
+    });
+  </script>
+</body>
+</html>

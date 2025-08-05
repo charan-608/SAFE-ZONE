@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    min-height: 160vh; 
+    
+}
+
+.signup-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    backdrop-filter: blur(10px);
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.mandatory {
+    font-size: 14px;
+    color: #f8d210;
+}
+
+.section {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+input, select, textarea {
+    padding: 8px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 60px;
+}
+
+.emergency-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.emergency-contact {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.emergency-contact h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.signup-btn {
+    margin-top: 20px;
+    padding: 12px;
+    width: 100%;
+    background: #f8d210;
+    color: #333;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.signup-btn:hover {
+    background: #f39c12;
+}

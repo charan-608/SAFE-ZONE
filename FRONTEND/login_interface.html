@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MemoryGuard - Login</title>
+    <link rel="stylesheet" href="login_interface.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="Page_2.html" method="GET">
+            <div class="input-group">
+                <label for="email">Email ID</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+            </div>
+            <div class="input-group">
+                <label for="password">App Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+                
+                <!-- Password strength bar -->
+                <div class="strength-meter">
+                    <div id="strength-bar"></div>
+                </div>
+                <small id="strength-text"></small>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <p class="signup-link">Don't have an account? <a href="Google_signup.html">Sign up</a></p>
+    </div>
+
+    <script>
+        const passwordInput = document.getElementById("password");
+        const strengthBar = document.getElementById("strength-bar");
+        const strengthText = document.getElementById("strength-text");
+
+        passwordInput.addEventListener("input", function () {
+            const value = passwordInput.value;
+            let score = 0;
+
+            if (value.length >= 8) score++;
+            if (/[A-Z]/.test(value)) score++;
+            if (/[a-z]/.test(value)) score++;
+            if (/\d/.test(value)) score++;
+            if (/[^A-Za-z0-9]/.test(value)) score++;
+
+            if (value.length === 0) {
+                strengthBar.style.width = "0%";
+                strengthBar.style.backgroundColor = "transparent";
+                strengthText.textContent = "";
+            } else if (score <= 2) {
+                strengthBar.style.width = "33%";
+                strengthBar.style.backgroundColor = "red";
+                strengthText.textContent = "Weak";
+                strengthText.style.color = "white";
+            } else if (score === 3 || score === 4) {
+                strengthBar.style.width = "66%";
+                strengthBar.style.backgroundColor = "orange";
+                strengthText.textContent = "Medium";
+                strengthText.style.color = "white";
+            } else {
+                strengthBar.style.width = "100%";
+                strengthBar.style.backgroundColor = "green";
+                strengthText.textContent = "Strong";
+                strengthText.style.color = "white";
+            }
+        });
+    </script>
+</body>
+</html>

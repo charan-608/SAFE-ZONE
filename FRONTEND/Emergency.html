@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MemoryGuard - Patient Selection</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(45deg, #ff6f61, #ffb3b3);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    header {
+      background-color: #ff4081;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      border-radius: 15px 15px 0 0;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      margin-bottom: 30px;
+      width: 100%;
+      max-width: 500px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .container {
+      background-color: white;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+      animation: fadeIn 1.5s ease-in-out;
+      position: relative;
+      z-index: 1;
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .patient-btn, .emergency-btn {
+      background-color: #ff4081;
+      border: none;
+      color: white;
+      padding: 15px 40px;
+      font-size: 20px;
+      cursor: pointer;
+      border-radius: 30px;
+      width: 100%;
+      max-width: 350px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      text-transform: uppercase;
+    }
+
+    .patient-btn:hover, .emergency-btn:hover {
+      background-color: #f50057;
+      transform: scale(1.1);
+    }
+
+    .emergency-btn {
+      background-color: #ff9800;
+    }
+
+    .emergency-btn:hover {
+      background-color: #f57c00;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 40px;
+      transition: color 0.3s ease;
+      position: relative;
+      z-index: 2;
+      animation: heatEffect 10s ease-in-out infinite;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes heatEffect {
+      0%, 20% { color: #333; text-shadow: none; }
+      25%, 40% { color: red; text-shadow: 0 0 20px orange; }
+      45%, 100% { color: #333; text-shadow: none; }
+    }
+
+    .dragon {
+      position: absolute;
+      top: 40%;
+      left: 110%;
+      transform: translateY(-50%);
+      height: 300px;
+      z-index: 0;
+      animation: dragonFlight 10s linear infinite;
+    }
+
+    @keyframes dragonFlight {
+      0% { left: 110%; }
+      40% { left: 65%; }
+      60% { left: 35%; }
+      100% { left: -30%; }
+    }
+
+    .flame {
+      position: absolute;
+      top: 54%;
+      left: 102%;
+      height: 100px;
+      width: 100px;
+      opacity: 0;
+      z-index: 1;
+      animation: flameBlast 10s ease-in-out infinite;
+    }
+
+    @keyframes flameBlast {
+      0%, 20% {
+        transform: scale(0) translateX(0);
+        opacity: 0;
+      }
+      25% {
+        transform: scale(1) translateX(-100px);
+        opacity: 1;
+      }
+      40% {
+        transform: scale(1.5) translateX(-600px);
+        opacity: 1;
+      }
+      45% {
+        transform: scale(0) translateX(-1000px);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(0) translateX(-1000px);
+        opacity: 0;
+      }
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      font-size: 14px;
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main-content">
+    <header>MemoryGuard</header>
+    <div class="container">
+      <h1>Select a Patient</h1>
+      <div class="button-group">
+        <button class="patient-btn" onclick="window.location.href='Existing_patient.html'">Patient</button>
+        <button class="emergency-btn" onclick="window.location.href='Emergency.html'">Emergency Patients</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 MemoryGuard. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    padding-top: 20px;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.feature-btn {
+    width: 300px;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.feature-btn img {
+    width: 35px;
+    height: 35px;
+}
+
+/* Unique Colors */
+.live-location {
+    background-color: #27ae60;
+    color: white;
+}
+
+.live-location:hover {
+    background-color: #219150;
+}
+
+.geo-fencing {
+    background-color: #f39c12;
+    color: white;
+}
+
+.geo-fencing:hover {
+    background-color: #e67e22;
+}
+
+.sos {
+    background-color: #c0392b;
+    color: white;
+}
+
+.sos:hover {
+    background-color: #a93226;
+}
+
+.battery {
+    background-color: #8e44ad;
+    color: white;
+}
+
+.battery:hover {
+    background-color: #732d91;
+}
+
+.emergency {
+    background-color: #3498db;
+    color: white;
+}
+
+.emergency:hover {
+    background-color: #2980b9;
+}
+
+.feature-btn:active {
+    transform: scale(0.95);
+}

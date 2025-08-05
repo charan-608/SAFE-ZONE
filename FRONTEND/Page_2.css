@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    padding-top: 70px;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.patient-btn, .new-patient-btn {
+    width: 250px;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.patient-btn {
+    background-color: #2980b9;
+    color: white;
+}
+
+.patient-btn:hover {
+    background-color: #1f618d;
+}
+
+.patient-btn:active {
+    transform: scale(0.95);
+}
+
+.new-patient-btn {
+    background-color: #f39c12;
+    color: white;
+}
+
+.new-patient-btn:hover {
+    background-color: #e67e22;
+}
+
+.new-patient-btn:active {
+    transform: scale(0.95);
+}

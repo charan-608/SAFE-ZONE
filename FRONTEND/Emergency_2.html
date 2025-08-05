@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emergency Patients</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f44336;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 32px;
+        }
+
+        table {
+            width: 80%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .button-group {
+            margin-top: 20px;
+        }
+
+        .back-btn {
+            background-color: #4caf50;
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            text-align: center;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .back-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Emergency Patients
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Emergency Contact List</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Contact Number</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Suresh</td>
+                        <td>+91 123 456 7890</td>
+                        <td>123, Main Street, Delhi</td>
+                    </tr>
+                    <tr>
+                        <td>Ramesh</td>
+                        <td>+91 987 654 3210</td>
+                        <td>456, Park Avenue, Mumbai</td>
+                    </tr>
+                    <tr>
+                        <td>Ravi</td>
+                        <td>+91 555 123 4567</td>
+                        <td>789, Green Park, Bangalore</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="button-group">
+                <button class="back-btn" onclick="window.location.href='Page_2.html'">Back</button>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
