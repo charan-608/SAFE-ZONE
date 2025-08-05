@@ -48,7 +48,9 @@ Patients with Alzheimer’s often suffer from memory loss, disorientation, and w
 - 🚓 **Nearby Police Stations & Hospitals**
 - 📱 **Mobile Responsive Design**
 
-> Check out the [](https://safezone-66yefocvk-charan-608s-projects.vercel.app/) in the documentation folder.
+> Check out the documentation folder for in depth details
+![LIVE USAGE IMAGE](https://github.com/charan-608/SAFE-ZONE/blob/main/DOCUMENTATION/Working%20images.jpg)
+
 
 ---
 
@@ -58,4 +60,4 @@ Patients with Alzheimer’s often suffer from memory loss, disorientation, and w
 2. **Transmission**: Sent via GSM to Firebase/cloud.
 3. **Storage & API**: Data processed and served to the frontend.
 4. **Frontend Display**: Location visualized on a live map.
-
+![FLOW CHART](https://github.com/charan-608/SAFE-ZONE/blob/main/DOCUMENTATION/FLOW_DIAGRAM.png)
